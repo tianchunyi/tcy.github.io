@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>学习笔记 | 田春怡的个人博客</title><meta name="author" content="田春怡"><meta name="copyright" content="田春怡"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机操作系统学习笔记一、操作系统概述（一）定义与功能操作系统（Operating System，简称 OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。其主要功能包括：  进程管理：负责对进程进行创建、调度、终止等操作。例如，在多任务操作系统中，同时运行着浏览器、音乐播放器、文本编辑器等多个进程，操作系统需要合理分配 CPU 时间，让各个进程都能有序执行。 内存管理：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记">
+<meta property="og:url" content="http://example.com/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/index.html">
+<meta property="og:site_name" content="田春怡的个人博客">
+<meta property="og:description" content="计算机操作系统学习笔记一、操作系统概述（一）定义与功能操作系统（Operating System，简称 OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。其主要功能包括：  进程管理：负责对进程进行创建、调度、终止等操作。例如，在多任务操作系统中，同时运行着浏览器、音乐播放器、文本编辑器等多个进程，操作系统需要合理分配 CPU 时间，让各个进程都能有序执行。 内存管理：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2025-05-29T03:43:39.000Z">
+<meta property="article:modified_time" content="2025-05-29T04:05:22.625Z">
+<meta property="article:author" content="田春怡">
+<meta property="article:tag" content="计算机操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "学习笔记",
+  "url": "http://example.com/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2025-05-29T03:43:39.000Z",
+  "dateModified": "2025-05-29T04:05:22.625Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "田春怡",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '学习笔记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">田春怡的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">学习笔记</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-05-29T03:43:39.000Z" title="发表于 2025-05-29 11:43:39">2025-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-05-29T04:05:22.625Z" title="更新于 2025-05-29 12:05:22">2025-05-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="计算机操作系统学习笔记"><a href="#计算机操作系统学习笔记" class="headerlink" title="计算机操作系统学习笔记"></a>计算机操作系统学习笔记</h1><h2 id="一、操作系统概述"><a href="#一、操作系统概述" class="headerlink" title="一、操作系统概述"></a>一、操作系统概述</h2><h3 id="（一）定义与功能"><a href="#（一）定义与功能" class="headerlink" title="（一）定义与功能"></a>（一）定义与功能</h3><p>操作系统（Operating System，简称 OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。其主要功能包括：</p>
+<ol>
+<li><strong>进程管理</strong>：负责对进程进行创建、调度、终止等操作。例如，在多任务操作系统中，同时运行着浏览器、音乐播放器、文本编辑器等多个进程，操作系统需要合理分配 CPU 时间，让各个进程都能有序执行。</li>
+<li><strong>内存管理</strong>：管理计算机的内存资源，包括内存的分配、回收以及地址映射等。比如，当启动一个大型游戏程序时，操作系统会为其分配足够的内存空间，确保游戏能够正常运行。</li>
+<li><strong>文件管理</strong>：对计算机中的文件和目录进行组织、存储、检索和保护。像我们在电脑上保存的文档、图片、视频等各类文件，都由文件管理模块进行管理。</li>
+<li><strong>设备管理</strong>：负责管理计算机的外部设备，如键盘、鼠标、打印机、硬盘等。例如，当我们插入 U 盘时，操作系统会自动识别并进行相应的驱动加载等操作。</li>
+</ol>
+<h3 id="（二）操作系统分类"><a href="#（二）操作系统分类" class="headerlink" title="（二）操作系统分类"></a>（二）操作系统分类</h3><ol>
+<li><strong>批处理操作系统</strong>：用户将作业成批地提交给计算机，计算机自动依次处理各个作业。这种系统适合处理大量重复性的任务，但用户不能实时干预作业的执行。</li>
+<li><strong>分时操作系统</strong>：将 CPU 时间划分成时间片，轮流分配给多个用户程序使用。每个用户感觉自己独占计算机，可及时交互。常见的 Unix 系统早期就采用分时技术。</li>
+<li><strong>实时操作系统</strong>：能在规定的时间内对外部事件做出及时响应并处理。常用于工业控制、航空航天、军事等领域，如飞机的飞行控制系统。</li>
+<li><strong>网络操作系统</strong>：主要用于管理网络中的资源和通信，提供网络服务，如文件共享、打印共享、用户管理等。Windows Server 系列就是典型的网络操作系统。</li>
+<li><strong>分布式操作系统</strong>：将多个分散的计算机节点通过网络连接起来，统一管理资源，协调工作。云计算环境中就常采用分布式操作系统。</li>
+</ol>
+<h2 id="二、进程管理"><a href="#二、进程管理" class="headerlink" title="二、进程管理"></a>二、进程管理</h2><h3 id="（一）进程的概念"><a href="#（一）进程的概念" class="headerlink" title="（一）进程的概念"></a>（一）进程的概念</h3><p>进程是程序的一次执行过程，是操作系统进行资源分配和调度的基本单位。它由程序段、数据段和进程控制块（PCB）组成。例如，当我们双击打开一个应用程序时，操作系统就会为其创建一个进程，该进程包含了运行程序所需的代码、数据以及用于管理进程状态的 PCB 信息。</p>
+<h3 id="（二）进程状态"><a href="#（二）进程状态" class="headerlink" title="（二）进程状态"></a>（二）进程状态</h3><ol>
+<li><strong>就绪状态</strong>：进程已获得除 CPU 之外的所有必要资源，只要获得 CPU 资源，就可以立即执行。就像运动员在起跑线上准备就绪，只等发令枪响（获得 CPU）就起跑。</li>
+<li><strong>执行状态</strong>：进程正在 CPU 上运行。此时进程占用 CPU 资源，执行程序指令。</li>
+<li><strong>阻塞状态</strong>：进程因等待某一事件（如 I&#x2F;O 操作完成、等待信号量等）而暂时无法执行。比如，当进程需要从硬盘读取数据时，在数据未读取完成前，进程会进入阻塞状态。</li>
+</ol>
+<h3 id="（三）进程调度"><a href="#（三）进程调度" class="headerlink" title="（三）进程调度"></a>（三）进程调度</h3><ol>
+<li><strong>先来先服务（FCFS）调度算法</strong>：按照进程到达的先后顺序进行调度，先到达的进程先获得 CPU 资源。这种算法简单公平，但对于短进程可能不太友好，可能导致短进程等待时间过长。</li>
+<li><strong>短作业优先（SJF）调度算法</strong>：优先调度运行时间最短的进程。可以提高系统的整体效率，但难以准确预知进程的运行时间，且可能导致长进程饥饿（长时间得不到调度）。</li>
+<li><strong>时间片轮转调度算法</strong>：将 CPU 时间划分成固定大小的时间片，就绪队列中的进程轮流在 CPU 上运行一个时间片。若时间片结束时进程未完成，就回到就绪队列末尾等待下一次调度。这种算法适用于分时系统，能保证每个进程都有机会得到 CPU 时间。</li>
+<li><strong>优先级调度算法</strong>：为每个进程分配一个优先级，优先级高的进程优先获得 CPU 资源。可以根据进程的重要性、资源需求等因素确定优先级，但可能会出现低优先级进程长期得不到调度的情况。</li>
+</ol>
+<h2 id="三、内存管理"><a href="#三、内存管理" class="headerlink" title="三、内存管理"></a>三、内存管理</h2><h3 id="（一）内存分配方式"><a href="#（一）内存分配方式" class="headerlink" title="（一）内存分配方式"></a>（一）内存分配方式</h3><ol>
+<li><strong>静态分配</strong>：在程序运行前，就为其分配固定大小的内存空间，在程序运行过程中，内存空间大小不再改变。这种方式简单，但内存利用率较低，可能导致内存浪费。例如早期的一些简单程序可能采用静态分配方式。</li>
+<li><strong>动态分配</strong>：在程序运行过程中，根据程序的实际需求动态地分配和回收内存。可以提高内存利用率，但实现相对复杂，需要操作系统进行有效的管理和控制。现代操作系统大多采用动态分配方式。</li>
+</ol>
+<h3 id="（二）虚拟内存技术"><a href="#（二）虚拟内存技术" class="headerlink" title="（二）虚拟内存技术"></a>（二）虚拟内存技术</h3><p>虚拟内存是操作系统利用硬盘空间模拟的一块内存区域，使得程序可以运行在比实际物理内存更大的空间中。其原理是将暂时不用的内存数据存储到硬盘上，当需要时再调回内存。比如，我们在运行一个大型游戏时，游戏程序的代码和数据可能很大，超过了物理内存容量，但通过虚拟内存技术，游戏可以正常运行。虚拟内存技术包括请求分页存储管理、请求分段存储管理等方式。</p>
+<h3 id="（三）页面置换算法"><a href="#（三）页面置换算法" class="headerlink" title="（三）页面置换算法"></a>（三）页面置换算法</h3><p>当内存空间不足，需要将一些页面置换出去时，就要用到页面置换算法。常见算法有：</p>
+<ol>
+<li><strong>最佳置换算法（OPT）</strong>：理论上最优的算法，它选择未来最长时间内不会被访问的页面进行置换。但由于无法预知未来，该算法实际难以实现，主要用于理论分析和性能比较。</li>
+<li><strong>先进先出（FIFO）置换算法</strong>：按照页面进入内存的先后顺序进行置换，先进入的页面先被置换出去。这种算法简单，但可能会置换掉经常使用的页面，导致性能下降。</li>
+<li><strong>最近最少使用（LRU）置换算法</strong>：选择最近一段时间内最少使用的页面进行置换。它基于局部性原理，认为最近少用的页面未来也可能少用。实现 LRU 算法可以采用栈、计数器等多种方式。</li>
+</ol>
+<h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h3 id="（一）文件系统结构"><a href="#（一）文件系统结构" class="headerlink" title="（一）文件系统结构"></a>（一）文件系统结构</h3><p>文件系统通常采用层次化的目录结构，如树形目录结构。根目录下可以包含多个子目录和文件，子目录下又可以进一步包含子目录和文件。这种结构类似于我们电脑中的文件夹结构，方便用户对文件进行分类管理和查找。例如，在 Windows 系统中，C 盘根目录下有 “Program Files”“Windows” 等子目录，每个子目录下又有众多文件和子目录。</p>
+<h3 id="（二）文件的逻辑结构"><a href="#（二）文件的逻辑结构" class="headerlink" title="（二）文件的逻辑结构"></a>（二）文件的逻辑结构</h3><ol>
+<li><strong>顺序文件</strong>：文件中的记录按照顺序依次排列，读写操作按顺序进行。比如文本文件，通常是顺序存储的，从文件开头依次读取内容。</li>
+<li><strong>索引文件</strong>：为文件建立一个索引表，索引表中记录了文件记录的关键字和对应的物理地址。通过索引可以快速定位到需要的文件记录，适用于频繁进行随机访问的文件。</li>
+<li><strong>索引顺序文件</strong>：结合了顺序文件和索引文件的优点，先对文件记录进行分组，为每组建立一个索引项，既保持了顺序文件的顺序特性，又可以通过索引快速定位组内记录。</li>
+</ol>
+<h3 id="（三）文件的物理结构"><a href="#（三）文件的物理结构" class="headerlink" title="（三）文件的物理结构"></a>（三）文件的物理结构</h3><ol>
+<li><strong>连续分配</strong>：在磁盘上为文件分配一组连续的物理块，文件的逻辑块号与物理块号是连续对应的。这种分配方式简单，读写速度快，但不利于文件的动态增长和删除，容易产生磁盘碎片。</li>
+<li><strong>链接分配</strong>：采用链表的方式将文件的各个物理块链接起来。分为隐式链接和显式链接，隐式链接中每个物理块中包含指向下一个物理块的指针；显式链接则通过一张文件分配表（FAT）来记录文件各物理块的链接关系。链接分配便于文件的动态增长和删除，但不适合随机访问。</li>
+<li><strong>索引分配</strong>：为每个文件建立一个索引块，索引块中记录了文件各个物理块的地址。通过索引块可以快速找到文件的物理块，既适合顺序访问，也适合随机访问。</li>
+</ol>
+<h2 id="五、设备管理"><a href="#五、设备管理" class="headerlink" title="五、设备管理"></a>五、设备管理</h2><h3 id="（一）I-O-设备分类"><a href="#（一）I-O-设备分类" class="headerlink" title="（一）I&#x2F;O 设备分类"></a>（一）I&#x2F;O 设备分类</h3><ol>
+<li><strong>输入设备</strong>：用于向计算机输入数据和信息，如键盘、鼠标、扫描仪等。键盘通过按键操作将字符信息输入计算机，鼠标则用于控制屏幕上的光标位置和进行选择操作。</li>
+<li><strong>输出设备</strong>：将计算机处理的结果输出显示或存储，如显示器、打印机、音箱等。显示器将计算机处理后的图像、文字等信息展示给用户，打印机则将文档等内容打印到纸张上。</li>
+<li><strong>存储设备</strong>：用于存储数据，如硬盘、U 盘、光盘等。硬盘是计算机中最主要的存储设备，用于长期存储操作系统、应用程序和用户数据等。</li>
+</ol>
+<h3 id="（二）I-O-控制方式"><a href="#（二）I-O-控制方式" class="headerlink" title="（二）I&#x2F;O 控制方式"></a>（二）I&#x2F;O 控制方式</h3><ol>
+<li><strong>程序直接控制方式</strong>：由 CPU 直接控制 I&#x2F;O 设备的数据传输，CPU 不断查询 I&#x2F;O 设备的状态，直到数据传输完成。这种方式简单，但 CPU 利用率低，在数据传输过程中 CPU 一直处于等待状态。</li>
+<li><strong>中断驱动方式</strong>：当 I&#x2F;O 设备完成数据传输准备工作时，向 CPU 发送中断请求，CPU 响应中断后进行数据传输操作。相比程序直接控制方式，提高了 CPU 利用率，CPU 无需一直查询设备状态。</li>
+<li><strong>DMA 方式（直接内存访问）</strong>：在 DMA 控制器的控制下，I&#x2F;O 设备直接与内存进行数据传输，无需 CPU 干预。只有在数据传输开始和结束时才需要 CPU 进行一些初始化和收尾工作，大大提高了数据传输效率和 CPU 利用率。</li>
+<li><strong>通道方式</strong>：通道是一种特殊的处理器，专门用于管理 I&#x2F;O 操作。通道可以独立执行通道程序，控制 I&#x2F;O 设备与内存之间的数据传输，进一步减轻了 CPU 的负担，适用于大型计算机系统。</li>
+</ol>
+<h3 id="（三）设备分配与调度"><a href="#（三）设备分配与调度" class="headerlink" title="（三）设备分配与调度"></a>（三）设备分配与调度</h3><ol>
+<li><strong>设备分配</strong>：操作系统根据进程的请求，将 I&#x2F;O 设备分配给相应的进程使用。分配方式有静态分配和动态分配，静态分配在进程运行前就分配好设备，直到进程结束才收回；动态分配则在进程运行过程中根据需要分配设备。</li>
+<li><strong>设备调度</strong>：当多个进程请求使用同一设备时，操作系统需要按照一定的策略进行调度，决定哪个进程先使用设备。常见的调度算法有先来先服务、优先级调度等，原理与进程调度类似。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">田春怡</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">http://example.com/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">田春怡的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">计算机操作系统</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/05/27/%E6%B4%BB%E7%9D%80/" title="《活着》"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">《活着》</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">田春怡</div><div class="author-info-description">每日更新读书心得、写作练习和生活感悟，用文字记录成长与思考</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">计算机操作系统学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">一、操作系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">（一）定义与功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text">（二）操作系统分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">二、进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">（一）进程的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">（二）进程状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="toc-number">1.2.3.</span> <span class="toc-text">（三）进程调度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">三、内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">（一）内存分配方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E6%8A%80%E6%9C%AF"><span class="toc-number">1.3.2.</span> <span class="toc-text">（二）虚拟内存技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">（三）页面置换算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">四、文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">（一）文件系统结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">（二）文件的逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.</span> <span class="toc-text">（三）文件的物理结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">五、设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89I-O-%E8%AE%BE%E5%A4%87%E5%88%86%E7%B1%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text">（一）I&#x2F;O 设备分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89I-O-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.2.</span> <span class="toc-text">（二）I&#x2F;O 控制方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E8%AE%BE%E5%A4%87%E5%88%86%E9%85%8D%E4%B8%8E%E8%B0%83%E5%BA%A6"><span class="toc-number">1.5.3.</span> <span class="toc-text">（三）设备分配与调度</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="学习笔记">学习笔记</a><time datetime="2025-05-29T03:43:39.000Z" title="发表于 2025-05-29 11:43:39">2025-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/27/%E6%B4%BB%E7%9D%80/" title="《活着》">《活着》</a><time datetime="2025-05-27T04:00:22.000Z" title="发表于 2025-05-27 12:00:22">2025-05-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/24/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/" title="《百年孤独》">《百年孤独》</a><time datetime="2025-05-24T13:07:47.609Z" title="发表于 2025-05-24 21:07:47">2025-05-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="学习笔记2">学习笔记2</a><time datetime="2025-05-23T03:53:43.000Z" title="发表于 2025-05-23 11:53:43">2025-05-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 田春怡</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
